@@ -1,0 +1,71 @@
+{
+  "name": "generator-universal-react-and-redux",
+  "version": "1.0.0",
+  "keywords": [
+    "yeoman-generator",
+    "react",
+    "redux",
+    "webpack",
+    "express"
+  ],
+  "description": "a yeoman generator for universal/isomorphic applications using react, redux, webpack and express.",
+  "main": "index.js",
+  "scripts": {
+    "start": "NODE_PATH=$NODE_PATH:./src node --harmony .",
+    "dev": "npm run start & webpack-dev-server --progress --color --config ./webpack.config.js",
+    "build": "NODE_ENV=production webpack --progress --color -p --config ./webpack.prod.config.js",
+    "test": "mocha --compilers js:babel-register --recursive",
+    "test:watch": "npm test -- --watch",
+    "lint": "eslint ."
+  },
+  "author": "HistoireDeBabar",
+  "license": "ISC",
+  "devDependencies": {
+    "babel-cli": "^6.10.1",
+    "babel-core": "^6.10.4",
+    "babel-eslint": "^6.1.0",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-add-module-exports": "^0.2.1",
+    "babel-plugin-object-assign": "^1.2.1",
+    "babel-plugin-transform-object-assign": "^6.8.0",
+    "babel-preset-es2015": "^6.9.0",
+    "babel-preset-react": "^6.11.1",
+    "babel-register": "^6.9.0",
+    "chai": "^3.5.0",
+    "eslint": "^3.0.1",
+    "eslint-config-airbnb": "^9.0.1",
+    "eslint-plugin-import": "^1.10.2",
+    "eslint-plugin-jsx-a11y": "^1.5.5",
+    "eslint-plugin-react": "^5.2.2",
+    "mocha": "^2.5.3",
+    "react-hot-loader": "^1.3.0",
+    "webpack": "^1.13.1",
+    "webpack-dev-server": "^1.14.1"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.9.1",
+    "express": "^4.14.0",
+    "isomorphic-ensure": "^1.0.1",
+    "morgan": "^1.7.0",
+    "path": "^0.12.7",
+    "react": "^15.2.0",
+    "react-dom": "^15.2.0",
+    "react-redux": "^4.4.5",
+    "react-route": "^1.0.3",
+    "react-router": "^2.5.2",
+    "react-router-proxy-loader": "^0.5.1",
+    "redux": "^3.5.2",
+    "redux-logger": "^2.6.1",
+    "redux-thunk": "^2.1.0",
+    "winston": "^2.2.0",
+    "yeoman-generator": "^0.23.4"
+  },
+  "files": [
+    "src",
+    "test",
+    "index.js",
+    "server.jsx",
+    "webpack.config.js",
+    "webpack.prod.config.js"
+  ]
+}

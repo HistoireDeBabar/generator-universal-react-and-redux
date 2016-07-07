@@ -1,0 +1,32 @@
+{
+  "extends": [ "airbnb/base", "plugin:react/recommended", "plugin:import/errors", "plugin:import/warnings" ],
+  "plugins": [ "react", "import" ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmascript": 6,
+    "soureType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+    },
+  },
+  "rules" : {
+    "comma-dangle" : 0,
+    "no-unused-vars" : 1,
+    "object-shorthand" : 0,
+    "max-len": 0,
+    "no-param-reassign": 0,
+    "arrow-body-style": 0,
+    "consistent-return": 0,
+    "no-restricted-syntax": [0, "ForInStatement"]
+  },
+  "globals": {
+    "APP_CONFIG": true,
+    "describe": true,
+    "it": true,
+    "beforeEach": true,
+    "afterEach": true,
+    "browser": true,
+    "sinon": true,
+    "expect": true
+  }
+}

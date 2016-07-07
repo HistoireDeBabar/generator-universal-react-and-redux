@@ -1,0 +1,6 @@
+[
+    "*.log",
+    "./package.json",
+    "node_modules/*",
+    "dist/*"
+]
