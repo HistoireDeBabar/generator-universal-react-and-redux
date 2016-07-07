@@ -11,7 +11,8 @@ if (typeof require.ensure !== 'function') {
   });
 }
 /**
- * uses react-router-proxy to load in dependencies when needed.
+ * webpack will bundle seperate files on require.ensure
+ * and load each file in lazily to reduce initial load.
  */
 export default (
    // App Shell
