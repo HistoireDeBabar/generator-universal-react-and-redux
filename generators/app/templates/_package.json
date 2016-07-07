@@ -12,7 +12,7 @@
   "main": "index.js",
   "scripts": {
     "start": "NODE_PATH=$NODE_PATH:./src node --harmony .",
-    "dev": "npm run start & webpack-dev-server --progress --color --config ./webpack.config.js",
+    "dev": "npm run start & webpack-dev-server --inline --hot --progress --color --config ./webpack.config.js",
     "build": "NODE_ENV=production webpack --progress --color -p --config ./webpack.prod.config.js",
     "test": "mocha --compilers js:babel-register --recursive",
     "test:watch": "npm test -- --watch",
