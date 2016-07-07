@@ -23,6 +23,38 @@ yo universal-react-and-redux
  * Yeoman can be too opinionated at times but is easily convinced not to be.
  * Feel free to [learn more about Yeoman](http://yeoman.io/).
 
+## Universal Web Applications & Current Setup
+
+This generator was put together to ease the pain of starting a 'Universal Web Application',
+also referred to as an 'Isomorphic Web Application'.  The goal behind Universal applications
+are to:
+ * reduce the amount of duplicated client and server side code
+ * reduce initial load times of Single Page Applications
+ * increase SEO for Single Page Applications
+ * increase overall UX that Single Page Applications can be prone to (such as stuttered loading & reducing loading spinners)
+
+If you're familiar with writing Single Page Applications, you'll no doubt stumbled accross one or all of the issues outlined
+above.  To overcome these issues, this generator builds an application shell using React, Redux, Webpack and Express. The application
+will be rendered on the server, and initial state will be transfered to the client.  Furthermore, the through using webpack and react-router
+we can load our scripts and static assets dynamically as we navigate through the application opposed to upfront.
+
+This generator has been put together with the aid and influence of several other blogs and documentation sites, for more information
+on the state of Univeral Web Applications see the resources below.
+
+## Resources
+
+- http://redux.js.org/
+- https://egghead.io/lessons/javascript-redux-the-single-immutable-state-tree
+- https://github.com/reactjs/react-router/blob/master/docs/guides/ServerRendering.md
+- https://github.com/DavidWells/isomorphic-react-example
+- http://blog.scottlogic.com/2016/02/05/a-lazy-isomorphic-react-experiment.html
+- https://medium.com/front-end-developers/handcrafting-an-isomorphic-redux-application-with-love-40ada4468af4#.6qon662vr
+- https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0#.1gtchtcdg
+- https://github.com/petehunt/webpack-howto
+- http://webpack.github.io/docs/
+- http://survivejs.com/webpack/developing-with-webpack/
+- https://medium.com/@dan_abramov
+
 ## License
 
 ISC © [HistoireDeBabar](http://histoiredebabar.github.io/)
