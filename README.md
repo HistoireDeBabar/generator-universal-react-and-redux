@@ -1,4 +1,4 @@
-# generator-universal-react-and-redux [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Dependency Status][daviddm-image]][daviddm-url] [![Coverage percentage][coveralls-image]][coveralls-url]
+# generator-universal-react-and-redux [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > a yeoman generator for universal/isomorphic applications using react, redux, webpack and express.
 
 ## Installation
@@ -62,9 +62,5 @@ ISC © [HistoireDeBabar](http://histoiredebabar.github.io/)
 
 [npm-image]: https://badge.fury.io/js/generator-universal-react-and-redux.svg
 [npm-url]: https://npmjs.org/package/generator-universal-react-and-redux
-[travis-image]: https://travis-ci.org/HistoireDeBabar/generator-universal-react-and-redux.svg?branch=master
-[travis-url]: https://travis-ci.org/HistoireDeBabar/generator-universal-react-and-redux
 [daviddm-image]: https://david-dm.org/HistoireDeBabar/generator-universal-react-and-redux.svg?theme=shields.io
 [daviddm-url]: https://david-dm.org/HistoireDeBabar/generator-universal-react-and-redux
-[coveralls-image]: https://coveralls.io/repos/HistoireDeBabar/generator-universal-react-and-redux/badge.svg
-[coveralls-url]: https://coveralls.io/r/HistoireDeBabar/generator-universal-react-and-redux
