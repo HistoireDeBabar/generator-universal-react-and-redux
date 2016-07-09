@@ -1,6 +1,6 @@
 {
   "name": "generator-universal-react-and-redux",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "a yeoman generator for universal/isomorphic applications using react, redux, webpack and express.",
   "homepage": "https://github.com/HistoireDeBabar/generator-universal-react-and-redux",
   "author": {
