@@ -63,6 +63,10 @@ module.exports = yeoman.Base.extend({
       this.destinationPath('server.jsx')
     );
     this.fs.copy(
+      this.templatePath('gulpfile.js'),
+      this.destinationPath('gulpfile.js')
+    );
+    this.fs.copy(
       this.templatePath('webpack.*'),
       this.destinationRoot()
     );
@@ -74,6 +78,7 @@ module.exports = yeoman.Base.extend({
     // Recursively copies the src and test folders
     this.directory('./src/', './src');
     this.directory('./test/', './test');
+    this.directory('./scripts/', './scripts');
   },
 
   install: function () {
