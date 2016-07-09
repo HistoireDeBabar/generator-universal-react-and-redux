@@ -1,10 +1,12 @@
 // Uses React Router as a wrapper to our components.
-import React     from 'react';
+import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { Route, Router, IndexRoute } from 'react-router';
-import AppShell from './containers/AppShell';
+import AppShell from './containers/AppShell.jsx';
 
 // Polyfill for server side rendering of application
 if (typeof require.ensure !== 'function') {
+  // eslint-disable-next-line global-require
   require.ensure = require('isomorphic-ensure')({
     // If you require local files, pass the current location:
     dirname: __dirname,
@@ -20,7 +22,7 @@ export default (
     // Home Page (Index /)
     <IndexRoute getComponent={(next, cb) => {
       require.ensure([], (require) => {
-        cb(null, require('./containers/Home'));
+        cb(null, require('./containers/Home.jsx'));
       });
     }}/>
     // Other Pages.

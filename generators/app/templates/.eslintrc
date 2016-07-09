@@ -9,6 +9,9 @@
       "jsx": true,
     },
   },
+  settings: {
+    import/extensions: ['.js', '.jsx'],
+  },
   "rules" : {
     "comma-dangle" : 0,
     "no-unused-vars" : 1,
