@@ -15,7 +15,7 @@ gulp.task('lint', () =>
 );
 
 gulp.task('pre-testCoverage', () => {
-  return gulp.src(['src/**/*.js*', '!src/index.jsx', '!src/routes.jsx' ])
+  return gulp.src(['src/**/*.js*', '!src/index.jsx', '!src/routes.jsx'])
     .pipe(istanbul({
       includeUntested: true,
     }))
@@ -26,6 +26,6 @@ gulp.task('cover', ['pre-testCoverage'], () => {
   return gulp.src(['test/**/*.js'])
     .pipe(babel())
     .pipe(injectModules())
-    .pipe(mocha({ require: ['./test/.jsdom.js']}))
+    .pipe(mocha({ require: ['./test/.jsdom.js'] }))
     .pipe(istanbul.writeReports());
 });
