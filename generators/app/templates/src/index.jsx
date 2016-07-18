@@ -18,7 +18,7 @@ const store = createStore(
   applyMiddleware(
     thunkMiddleware, // lets us dispatch() functions
     loggerMiddleware // neat middleware that logs actions
-  ),
+  )
 );
 
 match({ history: browserHistory, routes }, (error, redirectLocation, renderProps) => {
