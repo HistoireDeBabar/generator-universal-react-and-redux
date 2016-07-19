@@ -41,6 +41,45 @@ we can load our scripts and static assets dynamically as we navigate through the
 This generator has been put together with the aid and influence of several other blogs and documentation sites, for more information
 on the state of Univeral Web Applications see the resources below.
 
+## Useage
+
+After the Yeoman Generator has completed, and `npm install` has been successful you can launch your new Universal App with:
+```
+   npm run dev
+```
+### Development Mode
+
+Running in dev mode uses webpacks dev server, this does not produce an output file/bundle and offers hot reloading.
+Once the server is running head to http://localhost.com:8080.  If you happen to navigate to localhost:3000 you will see your web page
+however as webpack stores the bundles in memory there will be an error in the console noting that your scripts can not be found.  Simply
+use port 8080 in development mode to get a functioning development environment.  For more information see the webpack documentation listed
+in the Resources.
+
+### Testing & Linting
+
+They are several testing and linting commands baked into the project, they are:
+```
+  npm test
+  npm run lint
+  npm run test:watch
+  npm cover
+```
+Firstly, `npm test` runs the tests in the test directory once.  `npm run lint` lints the project.  `npm run test:watch` runs the test runner continiously, watching
+files for changes and reruns on a change event (good for TDD). Finally, `npm cover` gives a breakdown as both a terminal output and within the coverage folder of all
+the test paths being covered and not covered in the project.
+
+### Building
+
+To build the application for production you can run:
+```
+  npm run build
+```
+This runs webpack with configurations to uglify and optimise the javascript.  It also outputs the files and chunks into the dist/ folder.
+You can then call:
+```
+  npm start
+```
+
 ## Resources
 
 - http://redux.js.org/
