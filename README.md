@@ -62,10 +62,10 @@ They are several testing and linting commands baked into the project, they are:
   npm test
   npm run lint
   npm run test:watch
-  npm cover
+  npm run cover
 ```
 Firstly, `npm test` runs the tests in the test directory once.  `npm run lint` lints the project.  `npm run test:watch` runs the test runner continiously, watching
-files for changes and reruns on a change event (good for TDD). Finally, `npm cover` gives a breakdown as both a terminal output and within the coverage folder of all
+files for changes and reruns on a change event (good for TDD). Finally, `npm run cover` gives a breakdown as both a terminal output and within the coverage folder of all
 the test paths being covered and not covered in the project.
 
 ### Building
