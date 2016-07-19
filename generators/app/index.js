@@ -35,6 +35,13 @@ module.exports = yeoman.Base.extend({
         message: 'Please enter the repository of this project',
         default: '',
       },
+      {
+        type: 'list',
+        name: 'includeSass',
+        message: 'Do you wish to include template sass folders, structured to the BEM methodology? (this includes sass/css loaders in the webpack config)',
+        default: 1,
+        choices: ['no', 'yes'],
+      },
     ];
 
     return this.prompt(prompts).then(function (props) {
@@ -44,41 +51,74 @@ module.exports = yeoman.Base.extend({
   },
 
   writing: function () {
+    // Recursively copies the src and test folders
+    this.directory('./src/', './src');
+    this.directory('./test/', './test');
+    this.directory('./scripts/', './scripts');
+    // Add the files that wont change depending on whether sass is required.
+    var files = ['index.js', 'gulpfile.js'];
+    // List the files that Sass is changed in.
+    var variants = ['server.jsx', 'webpack.config.js', 'webpack.prod.config.js'];
+    // PackageJson with arguments & depending on whether sass is required.
+    var packageArg;
+    if (this.props.includeSass === 'no') {
+      packageArg = {
+        path: '_package.json',
+        dest: 'package.json',
+      };
+      // index to go in the src folder is a special case so is wrote seperatley.
+      this.fs.copy(
+        this.templatePath('index.src.jsx'),
+        this.destinationPath('./src/index.jsx')
+      );
+    } else {
+      // Specific Sass Extensions that need more
+      // logic than putting sass on the end.
+      packageArg = {
+        path: '_package.json.sass',
+        dest: 'package.json',
+      };
+      this.fs.copy(
+        this.templatePath('index.src.jsx.sass'),
+        this.destinationPath('./src/index.jsx')
+      );
+      // Sass folder
+      this.directory('./scss/', './scss');
+    }
     this.fs.copyTpl(
-      this.templatePath('_package.json'),
-      this.destinationPath('package.json'),
+      this.templatePath(packageArg.path),
+      this.destinationPath(packageArg.dest),
       {
-        projectName: this.projectName,
-        projectDescription: this.projectDescription,
-        projectAuthor: this.projectAuthor,
-        projectRepo: this.projectRepo,
+        projectName: this.props.projectName,
+        projectDescription: this.props.projectDescription,
+        projectAuthor: this.props.projectAuthor,
+        projectRepo: this.props.projectRepo,
       }
     );
-    this.fs.copy(
-      this.templatePath('index.js'),
-      this.destinationPath('index.js')
-    );
-    this.fs.copy(
-      this.templatePath('server.jsx'),
-      this.destinationPath('server.jsx')
-    );
-    this.fs.copy(
-      this.templatePath('gulpfile.js'),
-      this.destinationPath('gulpfile.js')
-    );
-    this.fs.copy(
-      this.templatePath('webpack.*'),
-      this.destinationRoot()
-    );
+    for (var i = 0; i < files.length; i++) {
+      this.fs.copy(
+        this.templatePath(files[i]),
+        this.destinationPath(files[i])
+      );
+    }
+    for (var i = 0; i < variants.length; i++) {
+      var file = variants[i];
+      var path;
+      if (this.props.includeSass === 'yes') {
+        path = file + '.sass';
+      } else {
+        path = file;
+      }
+      this.fs.copy(
+        this.templatePath(path),
+        this.destinationPath(file)
+      );
+    }
     // Copy all dot files.
     this.fs.copy(
       this.templatePath('.*'),
       this.destinationRoot()
     );
-    // Recursively copies the src and test folders
-    this.directory('./src/', './src');
-    this.directory('./test/', './test');
-    this.directory('./scripts/', './scripts');
   },
 
   install: function () {
