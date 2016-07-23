@@ -5,8 +5,6 @@ const injectModules = require('gulp-inject-modules');
 const mocha = require('gulp-mocha');
 const eslint = require('gulp-eslint');
 
-gulp.task('default', ['sass', 'browserify', 'babel']);
-
 gulp.task('lint', () =>
   gulp.src(['**.js', './src/**', './test/**'])
     .pipe(eslint())
