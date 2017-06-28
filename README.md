@@ -1,3 +1,7 @@
+
+__N.B. This project is no longer maintained.  If you're looking to get started with react and/or redux and would like to get up and running quickly, I'd highly recommend [create-react-app](https://github.com/facebookincubator/create-react-app), it's awesome!__
+
+
 # generator-universal-react-and-redux [![NPM version][npm-image]][npm-url] [![Dependency Status][daviddm-image]][daviddm-url]
 > a yeoman generator for universal/isomorphic applications using react, redux, webpack and express.
 
